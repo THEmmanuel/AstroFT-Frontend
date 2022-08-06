@@ -633,7 +633,7 @@ export const changeChainPolygonMessage2: MessageContent = {
       content: 'Go back',
       onClick: async (messageContext) => {
         const newHist = await messageContext.addMessage({
-          content: 'I do not want a pretzel.',
+          content: 'I do not want an AstroFT.',
           type: MessageType.text,
           sendByUser: true,
         })
@@ -647,7 +647,6 @@ export const changeChainPolygonMessage2: MessageContent = {
 
 export const firstFreePretzelMessage: MessageContent = {
   content: [
-    "Since it's your first pretzel, it's completely free. No gas either.",
     'Are you ready to mint?',
   ],
   actions: [
@@ -655,7 +654,7 @@ export const firstFreePretzelMessage: MessageContent = {
       content: 'Yes',
       onClick: async (messageContext, web3Context, contractContext) => {
         let newHist = await messageContext.addMessage({
-          content: 'Yes, give pretzel!',
+          content: 'Yes, mint AstroFT!',
           type: MessageType.text,
           sendByUser: true,
         })
@@ -668,10 +667,8 @@ export const firstFreePretzelMessage: MessageContent = {
           newHist = await messageContext.addMessage(
             {
               content: [
-                'While we are baking, let me tell you a bit about Sugar Pretzels.',
-                'Which pretzel and topping you get is completely randomized.\nHowever, some traits are less common.\nIf you get toppings in the PretzelDAO CI colors, you were especially lucky!',
-                'As for the background color, we are looking at the weather data in Munich in the last day.\nThe background will depend on the temperature and the amount of rain.',
-                'Now let us wait for the pretzel...',
+                'While we are minting, let me tell you a bit about AstroFT',
+                'Astro FT was created by a team of astronomy enthusiasts/stargazers with a shared passion and fascination for the skies. \nThe idea was to have a dynamic NFT that changes to showcase major astronomical events. \nOn days without an astronomical event, we explore the beauty of the universe further by showing the Astronomy Picture Of the Day from NASA.',
               ],
               delay: 2000,
               type: MessageType.text,
@@ -779,10 +776,8 @@ export const freePretzelMessage: MessageContent = {
           newHist = await messageContext.addMessage(
             {
               content: [
-                'While we are baking, let me tell you a bit about Sugar Pretzels.',
-                'Which pretzel and topping you get is completely randomized.\nHowever, some traits are less common.\nIf you get toppings in the PretzelDAO CI colors, you were especially lucky!',
-                'As for the background color, we are looking at the weather data in Munich in the last day.\nThe background will depend on the temperature and the amount of rain.',
-                'Now let us wait for the pretzel...',
+                'While we are minting, let me tell you a bit about AstroFT',
+                'Astro FT was created by a team of astronomy enthusiasts/stargazers with a shared passion and fascination for the skies. \nThe idea was to have a dynamic NFT that changes to showcase major astronomical events. \nOn days without an astronomical event, we explore the beauty of the universe further by showing the Astronomy Picture Of the Day from NASA.',
               ],
               delay: 2000,
               type: MessageType.text,
@@ -1159,7 +1154,7 @@ export const changeChainEthereumMessage: MessageContent = {
       content: 'Go back',
       onClick: async (messageContext) => {
         const newHist = await messageContext.addMessage({
-          content: 'I do not want a pretzel.',
+          content: 'I do not want an AstroFT.',
           type: MessageType.text,
           sendByUser: true,
         })
@@ -1471,7 +1466,7 @@ export const somethingWentWrongWhileMintingMessage: MessageContent = {
 
 // ==========================================
 export const checkCanMintGasless: MessageContent = {
-  content: ['Let me have a look, whether this is your first Pretzel.'],
+  content: ['Let me have a look, whether this is your first AstroFT.'],
   actions: [
     {
       content: 'Ok',
