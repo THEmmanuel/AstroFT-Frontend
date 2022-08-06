@@ -82,15 +82,15 @@ async function mintGenesisPretzel(
 export const welcomeMessage: MessageContent = {
   content: [
     'Beep Boop!',
-    'Welcome to the Sugar Pretzels NFT Bakery!',
-    'If it is your first time here, you can get a free Sugar Pretzel.\nYou can also have a look at our special Genesis Pretzels.',
+    'Welcome to AstroFT!',
+    'If it is your first time here, you can mint your AstroFT',
   ],
   actions: [
     {
-      content: 'Free Pretzel',
+      content: 'Start Minting',
       onClick: async (messageContext, web3Context, ISugarPretzelContext) => {
         let newHist = await messageContext.addMessage({
-          content: 'Free Sugar Pretzels sounds great!',
+          content: 'Sounds great! Start my AstroFT mint',
           type: MessageType.text,
           sendByUser: true,
         })
@@ -119,54 +119,6 @@ export const welcomeMessage: MessageContent = {
         } else {
           console.log('Wallet not connected')
           return messageContext.addMessage(connectWalletPolygonMessage, newHist)
-        }
-      },
-    },
-    {
-      content: 'Genesis Pretzel',
-      onClick: async (
-        messageContext,
-        web3Context,
-        _,
-        genesisPretzelContext
-      ) => {
-        let newHist = await messageContext.addMessage({
-          content: 'Genesis Pretzel sounds interesting!',
-          type: MessageType.text,
-          sendByUser: true,
-        })
-        web3Context.setTargetContract('GENESIS_PRETZEL_CONTRACT')
-        if (web3Context.address) {
-          console.log('Wallet connected')
-          changeToSecret(messageContext)
-          newHist = await messageContext.addMessage(
-            {
-              content:
-                'Your wallet is already connected.\nYour address: ' +
-                web3Context.address,
-              type: MessageType.text,
-            },
-            newHist
-          )
-          if (!web3Context.isCorrectChain('GENESIS_PRETZEL_CONTRACT')) {
-            return messageContext.addMessage(
-              changeChainEthereumMessage,
-              //clears hist
-              []
-            )
-          }
-          return messageContext.addMessage(
-            checkSoldOutMessage,
-            //clears hist
-            []
-          )
-        } else {
-          changeToSecret(messageContext)
-          return messageContext.addMessage(
-            connectWalletEthereumMessage,
-            //clears hist
-            []
-          )
         }
       },
     },
@@ -445,7 +397,7 @@ export const whatIsAChainMessage: MessageContent = {
 
 export const connectWalletPolygonMessage: MessageContent = {
   content: [
-    'Sugar Pretzels are stored on the Polygon blockchain.',
+    'AstroFTs are stored on the Polygon blockchain.',
     'In order to mint them, you need to connect your wallet.',
   ],
   actions: [
@@ -597,7 +549,7 @@ export const connectWalletPolygonMessage2: MessageContent = {
       content: 'Go back',
       onClick: async (messageContext) => {
         const newHist = await messageContext.addMessage({
-          content: 'I do not want a pretzel.',
+          content: 'I do not want an AstroFT.',
           type: MessageType.text,
           sendByUser: true,
         })
