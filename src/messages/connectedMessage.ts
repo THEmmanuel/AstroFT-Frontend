@@ -754,8 +754,8 @@ export const firstFreePretzelMessage: MessageContent = {
 
 export const freePretzelMessage: MessageContent = {
   content: [
-    'Since you already have your first pretzel,\nyou will now have to pay gas yourself.',
-    'Do you still want your pretzel?',
+    'Since you already have your AstroFT,\nyou will now have to pay gas yourself.',
+    'Do you still want your AstroFT?',
   ],
   actions: [
     {
