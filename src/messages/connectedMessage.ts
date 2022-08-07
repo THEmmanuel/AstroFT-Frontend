@@ -172,10 +172,10 @@ export const mainMenuMessage: MessageContent = {
   content: ['What else can I do for you?'],
   actions: [
     {
-      content: 'Free Pretzels',
+      content: 'Mint AstroFT',
       onClick: async (messageContext, web3Context, ISugarPretzelContext) => {
         let newHist = await messageContext.addMessage({
-          content: 'Free Sugar Pretzels sounds great!',
+          content: 'AstroFT sounds great!',
           type: MessageType.text,
           sendByUser: true,
         })
@@ -197,47 +197,6 @@ export const mainMenuMessage: MessageContent = {
         } else {
           console.log('Wallet not connected')
           return messageContext.addMessage(connectWalletPolygonMessage, newHist)
-        }
-      },
-    },
-    {
-      content: 'Genesis Pretzel',
-      onClick: async (
-        messageContext,
-        web3Context,
-        _,
-        genesisPretzelContext
-      ) => {
-        let newHist = await messageContext.addMessage({
-          content: 'Genesis Pretzel sounds interesting!',
-          type: MessageType.text,
-          sendByUser: true,
-        })
-        web3Context.setTargetContract('GENESIS_PRETZEL_CONTRACT')
-        console.log('ON CHAIN:', web3Context.targetContract)
-
-        if (web3Context.address) {
-          console.log('Wallet connected')
-          changeToSecret(messageContext)
-          if (!web3Context.isCorrectChain('GENESIS_PRETZEL_CONTRACT')) {
-            return messageContext.addMessage(
-              changeChainEthereumMessage,
-              //clears hist
-              []
-            )
-          }
-          return messageContext.addMessage(
-            checkSoldOutMessage,
-            //clears hist
-            []
-          )
-        } else {
-          changeToSecret(messageContext)
-          return messageContext.addMessage(
-            connectWalletEthereumMessage,
-            //clears hist
-            []
-          )
         }
       },
     },
